@@ -1,0 +1,29 @@
+SIP Profile 100: Manipulations for outbound messages to PSTN trunk 
+SIP Profile 200: Manipulations for outbound messages to Phone System 
+SIP Profile 290: Manipulations for inbound messages from Phone System 
+SIP Profile 280: Message Manipulations for REFER INVITE to Phone System
+SIP header Pass-through list 
+Options Keepalive
+SRTP Crypto
+STUN ICE-Lite (For Media Bypass enabled only)
+Phone System Tenant
+Number translation rules
+From PSTN translation rule with non +E164 
+From Phone System translation rule with +E164 
+Codecs
+
++++++++Dial peers +++++++
+Outbound Dial-peer to the PSTN using UDP with RTP 
+dial-peer voice 100 voip
+Inbound Dial-peer from the PSTN using UDP with RTP 
+dial-peer voice 190 voip
+Outbound Dial-peers to Phone System using TLS with SRTP 
+dial-peer voice 200 voip
+Inbound Dial-peer from Phone System using TLS with SRTP 
+dial-peer voice 290 voip
+Outbound Dial-peer to Phone System for REFER using TLS with SRTP 
+dial-peer voice 280 voip
+
+Privacy Headers  ++++ Optional 
+dial-peer voice 100 voip
+
